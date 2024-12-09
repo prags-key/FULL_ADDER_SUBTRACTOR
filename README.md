@@ -35,21 +35,66 @@ A full subtractor is a combinational circuit that performs subtraction involving
 Diff = A ⊕ B ⊕ Bin 
 
 Borrow out = A'Bin + A'B + BBin
+![Screenshot 2024-12-09 080814](https://github.com/user-attachments/assets/fb2d3e18-5a3a-4a17-8266-53bb8e652b3a)
+![Screenshot 2024-12-09 080827](https://github.com/user-attachments/assets/47abe912-d901-48a0-97d3-03f9612acc52)
+
 
 **Truthtable**
 
-**Procedure**
 
-Write the detailed procedure here
+**Procedure**
+1.Type the program in Quartus software. 
+2.Compile and run the program. 
+3.Generate the RTL schematic and save the logic diagram. 
+4.Create nodes for inputs and outputs to generate the timing diagram.
+ 5.For different input combinations generate the timing
+ diagram
 
 **Program:**
-
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+```
+/*  //full adder
+ module ex04(sum, cout, a, b, cin);
+ output sum;
+ output cout;
+ input a;
+input b;
+ input cin;
+ //internal nets
+ wire sl,cl,c2;
+ //Instantiate logic gate primitives xor (sl,a,b);
+ and(cl,a,b);
+ xor (sum, sl, cin);
+ and(c2, sl, cin);
+ or(cout, c2,cl);
+ endmodule
+ Full subractor
+ module ex04a (df, bo, a, b, bin);
+ output df;
+ output bo;
+ input a;
+ input b;
+ input bin;
+ wire w1,w2, w3;
+ assign w1=a^b;
+ assign w2=(~a&b);
+ assign w3=(-w1&bin);
+ assign df-w1^bin;
+ assign bo-w2/w3;
+ endmodule
+```
+ Program to design a half subtractor and full subtractor circuit and
+ verify its truth table in quartus using Verilog programming 
+ Developed by:PRAGATHI KUMAR 
+ RegisterNumber:24006285
 */
 
 **RTL Schematic**
+![Screenshot 2024-12-09 080853](https://github.com/user-attachments/assets/94736549-070b-4f6b-9cb0-8b5d36ed161d)
+
 
 **Output Timing Waveform**
+![Screenshot 2024-12-09 080906](https://github.com/user-attachments/assets/3203be56-9641-4be6-bc2b-6daf0e2485bc)
+
 
 **Result:**
 
